@@ -30,10 +30,15 @@ services:
             - WW4API_POSTGRES_PASSWORD=postgres 
             - WW4API_ALLOWED_HOSTS=ww4,ww4api,localhost,127.0.0.1
             - WW4API_X_SCRIPT_NAME=/ww4/
+            - WW4API_PROTECTED_MEDIA_SERVER=django
+            - WW4API_PROTECTED_MEDIA_LOCATION_PREFIX=protected
         expose:
             -   8000
+        ports:
+            - 8000:8000
         volumes:
-            - ./projects:/home/app/media
+            - ./projects:/home/app/protected
+            - ./media:/home/app/media
 
 
 
@@ -79,6 +84,8 @@ services:
             - mongo
         expose:
             - 1026
+        ports:
+            - 1026:1026
         environment:
             - ORIONLD_TROE=TRUE
             - ORIONLD_TROE_USER=orion
