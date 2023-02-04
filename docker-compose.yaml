@@ -207,6 +207,49 @@ services:
         networks:
             - default
 
+    mysql-db:
+        restart: always
+        image: mysql:5.7
+        hostname: mysql-db
+        container_name: db-mysql
+        networks:
+            default:
+                ipv4_address: 172.18.1.10
+        environment:
+            - 'MYSQL_ROOT_PASSWORD=secret'
+            - 'MYSQL_ROOT_HOST=172.18.1.11'
+        ports:
+            - 3306:3306
+        volumes:
+            - mysql-db:/var/lib/mysql
+
+    keyrock:
+        image: fiware/idm:7.8.1
+        container_name: fiware-keyrock
+        hostname: keyrock
+        networks:
+            default:
+                ipv4_address: 172.18.1.11
+        depends_on:
+            - mysql-db
+        ports:
+            - '3005:3005'
+            - '443:443'
+        environment:
+            - DEBUG=idm:*
+            - IDM_DB_HOST=mysql-db
+            - IDM_HOST=keyrock
+            - IDM_PORT=3005
+            - IDM_DB_PASS=secret
+            - IDM_DB_USER=root
+            - IDM_ADMIN_USER=admin
+            - IDM_ADMIN_EMAIL=iaggo.capitanio@gmail.com
+            - IDM_ADMIN_PASS=ww4cri
+            - IDM_EMAIL_HOST=mailer
+            - IDM_EMAIL_PORT=25
+            - IDM_ENCRYPTION_KEY=ww4Cypher
+            - IDM_OAUTH_AUTH_LIFETIME=900 # 15 min
+
 volumes:
     ww4api-data:
         driver: local
@@ -219,4 +262,6 @@ volumes:
     postgres-db:
         driver: local
     pgadmin-data:
+        driver: local
+    mysql-db: 
         driver: local
