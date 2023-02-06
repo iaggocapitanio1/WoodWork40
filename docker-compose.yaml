@@ -31,7 +31,7 @@ services:
             - WW4API_ORION_HOST=http://orion-proxy:1027
             - WW4API_POSTGRES_PORT=5432
             - WW4API_POSTGRES_PASSWORD=postgres
-            - WW4API_ALLOWED_HOSTS=ww4,ww4api,localhost,127.0.0.1
+            - WW4API_ALLOWED_HOSTS=ww4,woodwork4.ddns.net,localhost,127.0.0.1
             - WW4API_X_SCRIPT_NAME=/ww4/
             - WW4API_PROTECTED_MEDIA_SERVER=django
             - WW4API_PROTECTED_MEDIA_LOCATION_PREFIX=protected
