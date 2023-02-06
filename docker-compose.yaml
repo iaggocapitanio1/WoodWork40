@@ -98,6 +98,8 @@ services:
             - mongo
         expose:
             - 1026
+        ports:
+            - 1026:1026
         environment:
             - ORIONLD_TROE=TRUE
             - ORIONLD_TROE_USER=orion
