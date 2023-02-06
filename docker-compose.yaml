@@ -59,8 +59,6 @@ services:
             - POSTGRES_DB=woodwork
         expose:
             - 5432
-        ports:
-            - 5432:5432
         volumes:
             - postgres-db:/var/lib/postgresql/data
 
@@ -75,8 +73,6 @@ services:
         expose:
             - "27017"
         command: --nojournal
-        ports:
-            - 27017:27017
         environment:
             - MONGO_DB_PORT=27017
 
@@ -100,8 +96,6 @@ services:
             - mongo
         expose:
             - 1026
-        ports:
-            - 1026:1026
         environment:
             - ORIONLD_TROE=TRUE
             - ORIONLD_TROE_USER=orion
@@ -273,8 +267,6 @@ services:
                 condition: on-failure
         expose:
             - "1027"
-        ports:
-            - 1027:1027
         environment:
             - DEBUG=pep-proxy:*
             - PEP_PROXY_DEBUG=true
