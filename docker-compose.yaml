@@ -6,7 +6,7 @@ services:
         hostname: ww4api
         command: gunicorn --bind 0.0.0.0:8000 authApi.wsgi --workers=4
         depends_on:
-            -   db
+            - db
             - orion
         restart: always
         container_name: ww4api
@@ -17,7 +17,7 @@ services:
         environment:
             - WW4API_EMAIL_USE_TLS=True
             - WW4API_SECRET_KEY=ROnousPlicaNSuBStARDOeKsHYsTanERPOULnU
-            - WW4API_HASHID_FIELD_SALT=afNSuBStARDOeKsHxnsSADodicn 
+            - WW4API_HASHID_FIELD_SALT=afNSuBStARDOeKsHxnsSADodicn
             - WW4API_EMAIL_HOST=smtp.gmail.com
             - WW4API_EMAIL_PORT=587
             - WW4API_EMAIL_HOST_USER=ww4wood@gmail.com
@@ -30,7 +30,7 @@ services:
             - WW4API_POSTGRES_HOST=db
             - WW4API_ORION_HOST=http://orion-proxy:1027
             - WW4API_POSTGRES_PORT=5432
-            - WW4API_POSTGRES_PASSWORD=postgres 
+            - WW4API_POSTGRES_PASSWORD=postgres
             - WW4API_ALLOWED_HOSTS=ww4,ww4api,localhost,127.0.0.1
             - WW4API_X_SCRIPT_NAME=/ww4/
             - WW4API_PROTECTED_MEDIA_SERVER=django
@@ -40,15 +40,13 @@ services:
             - WW4API_KEYROCK_CLIENT_SECRET=1043a85d-08e6-470e-8b6e-59d48e96cbfe
             - WW4API_CONTEXT=http://nginx:80/context/ww4zero.context-ngsi.jsonld
         expose:
-            -   8000
+            - 8000
         volumes:
             - ./projects:/home/app/protected
             - ./media:/home/app/media
 
-
-
     db:
-        image:  postgres:14.6-alpine
+        image: postgres:14.6-alpine
         hostname: db
         container_name: db
         restart: always
@@ -56,9 +54,9 @@ services:
             woodworkNET:
                 ipv4_address: 172.18.1.2
         environment:
-         - POSTGRES_PASSWORD=postgres
-         - POSTGRES_USER=postgres
-         - POSTGRES_DB=woodwork
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=woodwork
         expose:
             - 5432
         volumes:
@@ -172,7 +170,6 @@ services:
         depends_on:
             - timescale
 
-   
     syncthing:
         image: syncthing/syncthing
         container_name: syncthing
@@ -242,8 +239,7 @@ services:
 
         healthcheck:
             interval: 5s
-    
-        
+
     mysql-db:
         restart: always
         image: mysql:5.7
@@ -261,8 +257,7 @@ services:
             - "MYSQL_ROOT_HOST=172.18.1.11"
         volumes:
             - mysql-db:/var/lib/mysql
-    
-    
+
     orion-proxy:
         image: fiware/pep-proxy:8.1.0-distroless
         container_name: fiware-orion-proxy
@@ -307,7 +302,7 @@ services:
         networks:
             woodworkNET:
                 ipv4_address: 172.18.1.13
-        expose: 
+        expose:
             - 25
         environment:
             - SMTP_LOGIN=ww4wood@gmail.com
@@ -321,7 +316,6 @@ networks:
         ipam:
             config:
                 - subnet: 172.18.1.0/24
-
 
 volumes:
     ww4api-data:
