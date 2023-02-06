@@ -320,6 +320,4 @@ volumes:
         driver: local
     postgres-db:
         driver: local
-    pgadmin-data:
-        driver: local
     mysql-db: ~
