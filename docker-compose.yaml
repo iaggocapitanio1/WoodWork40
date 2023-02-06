@@ -267,6 +267,8 @@ services:
                 condition: on-failure
         expose:
             - "1027"
+        ports:
+            - 1027:1027
         environment:
             - DEBUG=pep-proxy:*
             - PEP_PROXY_DEBUG=true
