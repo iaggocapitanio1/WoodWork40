@@ -112,7 +112,7 @@ services:
             - ORIONLD_TRQ_POOL_SIZE=2
             - ORIONLD_LOG_FOR_HUMANS=TRUE
             - WW4API_X_SCRIPT_NAME=/ww4
-            - ORIONLD_CORS_ALLOWED_ORIGIN='__ALL'
+            - ORIONLD_CORS_ALLOWED_ORIGIN=__ALL
             - Access-Control-Allow-Headers=Content-Type, Fiware-Service, Fiware-Servicepath, Ngsiv2-AttrsFormat, Fiware-Correlator, X-Forwarded-For, X-Real-IP, X-Auth-Token
         healthcheck:
             test: curl --fail -s http://orion:1026/version || exit 1
@@ -283,6 +283,7 @@ services:
             - PEP_PROXY_PUBLIC_PATHS=/version
             - PEP_PASSWORD=pep_proxy_3daf2c3a-0b49-46ad-b519-2c9b49058131
             - PEP_PROXY_MAGIC_KEY=1234
+            - ORIONLD_CORS_ALLOWED_ORIGIN=__ALL
         healthcheck:
             test: curl --fail -s http://orion-proxy:1027/version || exit 1
 
