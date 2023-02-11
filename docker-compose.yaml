@@ -59,6 +59,8 @@ services:
             - POSTGRES_DB=woodwork
         expose:
             - 5432
+        ports:
+            - 5432:5432
         volumes:
             - postgres-db:/var/lib/postgresql/data
 
@@ -267,6 +269,8 @@ services:
                 condition: on-failure
         expose:
             - "1027"
+        ports:
+            - "1027:1027"
         environment:
             - DEBUG=pep-proxy:*
             - PEP_PROXY_DEBUG=true
