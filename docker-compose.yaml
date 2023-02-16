@@ -287,7 +287,7 @@ services:
             - PEP_PROXY_CORS_MAX_AGE=true
             - PEP_PROXY_ORG_ENABLED=true
             - PEP_PROXY_ORG_HEADER=woodwork40
-            - WILMA_ORION_FORWARD_HEADERS=true
+            - PEP_PROXY_EXPOSED_HEADERS=NGSILD-Results-Count
             - PEP_PROXY_APP_ID=b33ed854-1682-4d41-a035-4b7be543790b
             - PEP_PROXY_USERNAME=pep_proxy_0ea9a60f-10cb-4595-95a0-b9c89b7e2ce7
             - PEP_PROXY_PUBLIC_PATHS=/version
