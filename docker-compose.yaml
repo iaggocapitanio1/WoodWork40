@@ -257,7 +257,7 @@ services:
             - mysql-db:/var/lib/mysql
 
     orion-proxy:
-        image: fiware/pep-proxy:8.1.0-distroless
+        image: fiware/pep-proxy:8.0.0-distroless
         container_name: fiware-orion-proxy
         hostname: orion-proxy
         networks:
