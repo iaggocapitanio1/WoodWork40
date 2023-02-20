@@ -211,6 +211,7 @@ services:
         image: fiware/idm:7.6.0
         container_name: fiware-keyrock
         hostname: keyrock
+        restart: always
         networks:
             woodworkNET:
                 ipv4_address: 172.18.1.11
