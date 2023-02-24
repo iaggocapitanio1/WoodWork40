@@ -18,7 +18,6 @@ Describes the organization entity
    -  Required
 
 
-
 # Project
 
 Contains the information of a project
