@@ -318,6 +318,7 @@ services:
             tty: true
             volumes:
                 - ./projects:/home/app/Projects
+                - ./logs:/home/app/logs
             environment:
             - CLIENT_ID=b33ed854-1682-4d41-a035-4b7be543790b
             - CLIENT_SECRET=7e60884d-8cb9-4795-9584-8af8b807916c
