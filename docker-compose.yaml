@@ -317,14 +317,14 @@ services:
         restart: always
         tty: true
         volumes:
-            - ./projects:/home/app/Projects
+            - ./projects/project:/home/app/Projects
             - ./logs:/home/app/logs
         environment:
         - CLIENT_ID=b33ed854-1682-4d41-a035-4b7be543790b
         - CLIENT_SECRET=7e60884d-8cb9-4795-9584-8af8b807916c
         - TOKEN_URL=http://keyrock:3005/oauth2/token
         - WW4_GET_CUSTOMER_URL=http://ww4api:8000/api/v1/accounts/get-customer/
-        - PROJECTS_DIR=/home/app/Projects/project
+        - PROJECTS_DIR=/home/app/Projects
         - ORION_HOST=http://orion-proxy:1027
         - NGSI_LD_CONTEXT=http://nginx:80/context/ww4zero.context-ngsi.jsonld
         networks:
