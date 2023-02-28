@@ -39,6 +39,7 @@ services:
             - WW4API_KEYROCK_CLIENT_ID=b33ed854-1682-4d41-a035-4b7be543790b
             - WW4API_KEYROCK_CLIENT_SECRET=7e60884d-8cb9-4795-9584-8af8b807916c
             - WW4API_CONTEXT=http://nginx:80/context/ww4zero.context-ngsi.jsonld
+            - WW4API_REDIRECT_TO_FRONT=True
         expose:
             - 8000
         volumes:
