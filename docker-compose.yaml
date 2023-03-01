@@ -19,7 +19,7 @@ services:
             - WW4API_HASHID_FIELD_SALT=afNSuBStARDOeKsHxnsSADodicn
             - WW4API_EMAIL_USE_TLS=True
             - WW4API_EMAIL_HOST=mail.nkaonline.net
-            - WW4API_EMAIL_PORT=465
+            - WW4API_EMAIL_PORT=486
             - WW4API_EMAIL_HOST_USER=ww40@nkaonline.net
             - WW4API_EMAIL_HOST_PASSWORD=Ww4.0_2022#
             - WW4API_DEFAULT_FROM_EMAIL=ww40@nkaonline.net
