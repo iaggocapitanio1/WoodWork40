@@ -45,7 +45,7 @@ services:
         volumes:
             - ./projects:/home/app/protected
             - ./media:/home/app/media
-            - ww4api-data: /home/app/
+            - ww4api-data:/home/app/
 
     db:
         image: postgres:14.6-alpine
