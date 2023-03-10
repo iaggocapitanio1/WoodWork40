@@ -181,7 +181,7 @@ services:
             - PUID=1000
             - PGID=1000
         volumes:
-            - ./projects:/var/syncthing/Sync
+            - ./projects:/var/syncthing/
         expose:
             - 8384
         ports:
