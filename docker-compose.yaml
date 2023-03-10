@@ -45,6 +45,7 @@ services:
         volumes:
             - ./projects:/home/app/protected
             - ./media:/home/app/media
+            - ww4api-data: /home/app/
 
     db:
         image: postgres:14.6-alpine
@@ -180,11 +181,7 @@ services:
             - PUID=1000
             - PGID=1000
         volumes:
-<<<<<<< HEAD
-            - ./projects/project:/var/syncthing/Sync
-=======
             - ./projects:/var/syncthing/Sync
->>>>>>> 90663be (adding)
         expose:
             - 8384
         ports:
