@@ -180,7 +180,11 @@ services:
             - PUID=1000
             - PGID=1000
         volumes:
+<<<<<<< HEAD
             - ./projects/project:/var/syncthing/Sync
+=======
+            - ./projects:/var/syncthing/Sync
+>>>>>>> 90663be (adding)
         expose:
             - 8384
         ports:
@@ -202,7 +206,6 @@ services:
         tty: true
         volumes:
             - ./context:/srv/ww4/context
-            - ./syncthingFolder/Sync:/srv/ww4/projects
             - ./staticfiles:/srv/ww4/api/staticfiles
             - ./projects:/srv/ww4/api/media
         depends_on:
