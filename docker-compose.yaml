@@ -125,7 +125,7 @@ services:
         command: -dbhost mongo -logLevel ERROR -troePoolSize 20 -forwarding
 
     timescale:
-        image: timescale/timescaledb-postgis:latest-pg12
+        image: timescale/timescaledb-postgis:1.7.5-pg12
         restart: always
         hostname: timescale
         networks:
@@ -142,7 +142,7 @@ services:
         environment:
             - POSTGRES_USER=orion
             - POSTGRES_PASSWORD=orion
-            - POSTGRES_HOST_AUTH_METHOD=false
+            - POSTGRES_HOST_AUTH_METHOD=trust
         expose:
             - "5432"
         volumes:
