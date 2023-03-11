@@ -36,8 +36,8 @@ services:
             - WW4API_PROTECTED_MEDIA_SERVER=django
             - WW4API_PROTECTED_MEDIA_LOCATION_PREFIX=protected
             - WW4API_KEYROCK_TOKEN_URL=http://keyrock:3005/oauth2/token
-            - WW4API_KEYROCK_CLIENT_ID=b33ed854-1682-4d41-a035-4b7be543790b
-            - WW4API_KEYROCK_CLIENT_SECRET=7e60884d-8cb9-4795-9584-8af8b807916c
+            - WW4API_KEYROCK_CLIENT_ID=6691375e-8e16-450b-9e66-40509f36ce1d
+            - WW4API_KEYROCK_CLIENT_SECRET=1e1ba23f-f4a1-44ef-8ad0-5d8879f63125
             - WW4API_CONTEXT=http://nginx:80/context/ww4zero.context-ngsi.jsonld
             - WW4API_REDIRECT_TO_FRONT=True
         expose:
@@ -285,10 +285,10 @@ services:
             - PEP_PROXY_IDM_PORT=3005
             - PEP_PROXY_AUTH_ENABLED=false
             - PEP_PROXY_EXPOSED_HEADERS=NGSILD-Results-Count
-            - PEP_PROXY_APP_ID=b33ed854-1682-4d41-a035-4b7be543790b
-            - PEP_PROXY_USERNAME=pep_proxy_0ea9a60f-10cb-4595-95a0-b9c89b7e2ce7
+            - PEP_PROXY_APP_ID=6691375e-8e16-450b-9e66-40509f36ce1d
+            - PEP_PROXY_USERNAME=pep_proxy_2cd2ce2c-2fc4-44eb-aaff-fb6c43348b10
             - PEP_PROXY_PUBLIC_PATHS=/version
-            - PEP_PASSWORD=pep_proxy_3daf2c3a-0b49-46ad-b519-2c9b49058131
+            - PEP_PASSWORD=pep_proxy_c2bed49c-af61-4e64-aa17-63d1508a7511
             - PEP_PROXY_MAGIC_KEY=1234
             - ORIONLD_CORS_ALLOWED_ORIGIN=__ALL
         healthcheck:
