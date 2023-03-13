@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
     ww4api:
-        image: iaggo/woodwork4.0_api:0.2.15
+        image: iaggo/woodwork4.0_api:0.2.16
         hostname: ww4api
         command: gunicorn --bind 0.0.0.0:8000 authApi.wsgi --workers=4
         depends_on:
